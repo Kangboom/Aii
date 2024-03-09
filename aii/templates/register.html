@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Medilab Bootstrap Template - Index</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="../static/assets/img/favicon.png" rel="icon" />
+    <link href="../static/assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="../static/assets/vendor/fontawesome-free/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="../static/assets/vendor/animate.css/animate.min.css" rel="stylesheet" />
+    <link
+      href="../static/assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../static/assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="../static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link
+      href="../static/assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="../static/assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="../static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="../static/assets/css/style.css" rel="stylesheet" />
+
+    <!-- =======================================================
+    * Template Name: Medilab
+    * Updated: Sep 18 2023 with Bootstrap v5.3.2
+    * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+
+  </head>
+
+  <section id="appointment" class="appointment section-bg">
+    <div class="container">
+      <div class="section-title">
+        <h2>sign-up</h2>
+        <p>알레르기 정보를 입력해야합니다.</p>
+      </div>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+          {% for category, message in messages %}
+              <div class="flash-message {{ category }}">
+                  {{ message }}
+              </div>
+          {% endfor %}
+      {% endif %}
+      {% endwith %}
+      <form method="POST">
+        {{form.csrf_token}}
+        <div class="row">
+          <div class="col-md-4 form-group">
+            {{form.username(class="form-control", placeholder="Name")}}
+            <div class="validate"></div>
+          </div>
+          <div class="col-md-4 form-group mt-3 mt-md-0">
+            {{form.useremail(class="form-control", type="email", id="email", placeholder="Your Email")}}
+            <div class="validate"></div>
+          </div>
+          <div class="col-md-4 form-group mt-3 mt-md-0">
+            {{form.password(type="password", class="form-control", id="passwd", placeholder="password")}}
+            <div class="validate"></div>
+          </div>
+        </div>
+
+        <div class="form-group mt-3">
+          {{form.allergy(class="form-control",  row="5", placeholder="allergy (Optional)")}}
+          <div class="validate"></div>
+        </div>
+        <div class="mb-3"></div>
+        <div class="text-center">
+          <button type="submit">sign-up</button>
+        </div>
+        <div class="text-center">
+        <button type="button" onclick="location.href='/'">
+          home
+        </button>
+      </div>
+      </form>
+    </div>
+  </section>
+  <!-- End Appointment Section -->
+</html>

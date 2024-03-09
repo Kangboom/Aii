@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Medilab Bootstrap Template - Index</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+<!DOCTYPE html>
+<!DOCTYPE html>
+    <link href="../static/assets/img/favicon.png" rel="icon" />
+    <link href="../static/assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="../static/assets/vendor/fontawesome-free/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="../static/assets/vendor/animate.css/animate.min.css" rel="stylesheet" />
+    <link
+      href="../static/assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../static/assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="../static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link
+      href="../static/assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="../static/assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="../static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="../static/assets/css/style.css" rel="stylesheet" />
+
+    <!-- =======================================================
+    * Template Name: Medilab
+    * Updated: Sep 18 2023 with Bootstrap v5.3.2
+    * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const loginForm = document.querySelector(".php-email-form");
+
+        loginForm.addEventListener("submit", function (event) {
+          event.preventDefault(); // 기본 제출 동작을 중지
+
+          // 여기에 서버로 데이터를 보내는 코드를 추가할 수 있음
+
+          // home.html 페이지로 이동
+          window.location.href = "home.html";
+        });
+      });
+    </script>
+  </head>
+  <section id="appointment" class="appointment section-bg">
+    <div class="container">
+      <div class="section-title">
+        <h2>login</h2>
+        <p></p>
+      </div>
+
+      <form method="post">
+        {{form.csrf_token}}
+        <div>
+          <div class="d-flex justify-content-center align-items-center">
+            <div class="col-md-4 form-group mt-3 mt-md-0">
+              {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                  {% for category, message in messages %}
+                      <div class="flash-message {{ category }}">
+                          {{ message }}
+                      </div>
+                  {% endfor %}
+              {% endif %}
+              {% endwith %}
+            </div>
+          </div>
+          <div class="d-flex justify-content-center align-items-center">
+            <div class="col-md-4 form-group mt-3 mt-md-0">
+              {{form.useremail(type="email", class="form-control", placeholder="Your Email")}}
+            </div>
+          </div>
+          <p></p>
+          <div class="validate"></div>
+          <div class="d-flex justify-content-center align-items-center">
+            <div class="col-md-4 form-group mt-3 mt-md-0">
+              {%if form.password.errors%}  
+              <!-- 로그인 실패시 errors/ password필드의 모든 에러를 갖고있다. -->
+              {{form.password.errors.0}}
+              <!--0 : 첫번째 에러메시지를 출력 하겠다 라는 뜻  -->
+              {%endif%}
+              {{form.password(type="password", class="form-control", placeholder="password")}}
+              <div class="validate"></div>
+            </div>
+          </div>
+        </div><br>
+
+        <div class="text-center">
+          <button type="submit">login</button>
+        </div>
+        <div class="text-center">
+          <button type="button" onclick="location.href='/register'">
+            signup
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+  <!-- End Appointment Section -->
+</html>

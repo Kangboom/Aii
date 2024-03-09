@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Inner Page - Medilab Bootstrap Template</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="../static/assets/img/favicon.png" rel="icon" />
+    <link href="../static/assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="../static/assets/vendor/fontawesome-free/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="../static/assets/vendor/animate.css/animate.min.css" rel="stylesheet" />
+    <link
+      href="../static/assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../static/assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="../static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link
+      href="../static/assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="../static/assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="../static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="../static/assets/css/style.css" rel="stylesheet" />
+
+    <!-- =======================================================
+  * Template Name: Medilab
+  * Updated: Sep 18 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  </head>
+  <script>
+    function previewImage(event) {
+      const reader = new FileReader();
+      reader.onload = function () {
+        const output = document.getElementById("imagePreview");
+        output.src = reader.result;
+        output.style.display = "block";
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  </script>
+  <body>
+    <!-- ======= Top Bar ======= -->
+    <div id="topbar" class="d-flex align-items-center fixed-top">
+      <div class="container d-flex justify-content-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">contact@example.com</a>
+          <i class="bi bi-phone"></i> +1 5589 55488 55
+        </div>
+        <div class="d-none d-lg-flex social-links align-items-center">
+          <div>
+            {%if session['username']%}
+            {{session['username']}}님 환영합니다.
+            {%endif%}
+          </div>
+          <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+      <div class="container d-flex align-items-center">
+        <h1 class="logo me-auto"><a href="/">AiOsee</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+        <nav id="navbar" class="navbar order-last order-lg-0">
+          <ul>
+            <li><a class="nav-link scrollto" href="/">Home</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+        {% if session['username'] %}
+        <a href="/logout" class="appointment-btn scrollto"><span class="d-none d-md-inline">로그아웃</span></a>
+        {% else %}
+          <a href="/login" class="appointment-btn scrollto"><span class="d-none d-md-inline">로그인</span></a>
+        {% endif %}
+      </div>
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <main id="main">
+      <section class="breadcrumbs">
+        <ol style="margin-left: 110px;">
+          <li><a href="/">Home</a></li>
+          <li>medicine</li>
+
+        </ol>
+
+      </section>
+        <section id="why-us" class="why-us">
+          <div style="text-align: center;">
+        <h1 style="font-weight: bold; margin-bottom:15px; color:#1977cc">영양제,</h1>
+        <h1 style="font-weight: bold; margin-bottom:15px;">하루 일과 중</h1>
+        <h1 style="font-weight: bold;">언제 섭취하면 좋을까?</h1>
+        <img
+            src="../static/assets/img/image12.png"
+            style="width: 400px; height: auto; margin-left: 20px; margin-top:50px;"
+          />
+        </div>
+       
+      </section>
+      <!-- ======= Breadcrumbs Section ======= -->
+      <section class="breadcrumbs">
+        
+        <div style="display: flex; justify-content: center">
+          <div style="margin-top: 40px;">
+            <h4 style="margin-left: 250px">우리가 알려줄게!</h4>
+
+            <h1 style="font-weight: bold; color: #1977cc; margin-left: 150px">
+              영양제 섭취 권장 시간
+            </h1>
+          </div>
+          <img
+            src="../static/assets/img/image10.png"
+            style="width: 150px; height: auto; margin-left: 20px"
+          />
+        </div>
+      </section>
+      <!-- End Breadcrumbs Section -->
+
+      <section id="appointment" class="appointment section-bg">
+        <div
+          class="container"
+          style="display: flex; justify-content: center; height: 70px"
+        >
+          <div
+            style="
+              background-color: white;
+              border-radius: 15px;
+              padding: 20px;
+              margin-bottom: 5px;
+              margin-right: 5px;
+              width: 500px;
+              text-align: center;
+            "
+          >
+            <span style="font-weight: bold; color: #1977cc"
+              >프로바이오틱스</span
+            >
+            : 아무 때나
+          </div>
+
+          <div
+            style="
+              background-color: white;
+              border-radius: 15px;
+              padding: 20px;
+              margin-bottom: 5px;
+              width: 500px;
+              text-align: center;
+            "
+          >
+          <span style="font-weight: bold; color: #1977cc">오메가3</span> :
+            점심이나 저녁 식사 후
+            
+          </div>
+        </div>
+        <div
+          class="container"
+          style="display: flex; justify-content: center; height: 70px"
+        >
+          <div
+            style="
+              background-color: white;
+              border-radius: 15px;
+              padding: 20px;
+              margin-bottom: 5px;
+              margin-right: 5px;
+              width: 500px;
+              text-align: center;
+            "
+          >
+            <span style="font-weight: bold; color: #1977cc"
+              >비타민D 칼슘 마그네슘 </span
+            >
+            : 식사 직후
+          </div>
+
+          <div
+            style="
+              background-color: white;
+              border-radius: 15px;
+              padding: 20px;
+              margin-bottom: 5px;
+              width: 500px;
+              text-align: center;
+            "
+          >
+            <span style="font-weight: bold; color: #1977cc">비타민B</span> :
+            오전·오후 일과 중에 섭취
+          </div>
+        </div>
+        <div
+          class="container"
+          style="display: flex; justify-content: center; height: 70px"
+        >
+          <div
+            style="
+              background-color: white;
+              border-radius: 15px;
+              padding: 20px;
+              margin-bottom: 5px;
+              margin-right: 5px;
+              width: 500px;
+              text-align: center;
+            "
+          >
+            <p style="position: relative; bottom:10px"><span style="font-weight: bold; color: #1977cc"
+              >비타민C</span
+            > : 공복 <br>(소화기관이 민갑한 경우 식후 섭취)</p>
+          </div>
+
+          <div
+            style="
+              background-color: white;
+              border-radius: 15px;
+              padding: 20px;
+              margin-bottom: 5px;
+              width: 500px;
+              text-align: center;
+            "
+          >
+          <span style="font-weight: bold; color: #1977cc">밀크시슬</span> : 점심이니 저녁
+            식사 후
+            
+          </div>
+        </div>
+        <div
+          class="container"
+          style="display: flex; justify-content: center; height: 70px"
+        >
+          <div
+            style="
+              background-color: white;
+              border-radius: 15px;
+              padding: 20px;
+              margin-bottom: 5px;
+              margin-right: 5px;
+              width: 500px;
+              text-align: center;
+            "
+          >
+          <span style="font-weight: bold; color: #1977cc">루테인 </span>: 오전 식사 직후</p>
+</div>
+          <div
+            style="
+              background-color: white;
+              border-radius: 15px;
+              padding: 20px;
+              margin-bottom: 5px;
+              width: 500px;
+              text-align: center;
+            "
+          >
+          <span style="font-weight: bold; color: #1977cc">콜라겐</span> :아침 또는 점심 식사 직후
+          </div>
+        </div>
+        
+        <div
+          class="container"
+          style="display: flex; justify-content: center; height: 70px"
+        >
+          <div
+            style="
+              background-color: white;
+              border-radius: 15px;
+              padding: 20px;
+              margin-bottom: 5px;
+              margin-right: 5px;
+              width: 500px;
+              text-align: center;
+            "
+          >
+          <span style="font-weight: bold; color: #1977cc">발효효소</span> : 식사 직전 혹은 식사 도중</p>
+          </div>
+
+          <div
+            style="
+              background-color: white;
+              border-radius: 15px;
+              padding: 20px;
+              margin-bottom: 5px;
+              margin-right: 5px;
+              width: 500px;
+              text-align: center;
+            "
+          >
+          <span style="font-weight: bold; color: #1977cc">코엔자임Q10</span> : 오후 일과 중, 식후 섭취</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="why-us" class="why-us">
+        <div class="container" style="display: flex; justify-content: center">
+          <h1 style="font-weight: bold; color: #1977cc; margin-top: 30px">
+            영양제 조합 추천
+          </h1>
+        </div>
+        <div class="container" style="display: flex; justify-content: center">
+          <img
+            src="../static/assets/img/image11.png"
+            style="
+              width: 300px;
+              height: auto;
+              margin-top: 5px;
+              margin-bottom: 14px;
+            "
+          />
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 align-items-stretch">
+            <div class="icon-boxes flex-column justify-content-center">
+              <div class="row">
+                <div class="col-lg-13 align-items-stretch">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <h1 style="font-weight:bold;color:#1977cc">찰떡 궁합</h2>
+                                       
+                      <li style="font-size:30px;"> 오메가3, + 코엔자임Q10 </li>
+                      <li style="font-size:30px;margin-right:96px;">오메가3 + 루테인</li>
+                      <li style="font-size:30px;margin-right:126px;"> 비타민C + 철분</li>
+                      <li style="font-size:30px;margin-right:94px;"> 비타민C + 콜라겐</li> 
+
+                    
+
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 align-items-stretch">
+            <div class="icon-boxes flex-column justify-content-center">
+              <div class="row">
+                <div class="col-lg-13 align-items-stretch">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <h1 style="font-weight:bold">환장 궁합</h2>
+                      <li style="font-size:30px;"> 비타민 D + 칼슘</li>
+                      <li style="font-size:30px; margin-right:61px;">칼슘 + 철분</li>
+                      <li style="font-size:30px; margin-left:17px;"> 비타민A + 루테인</li>
+                      <li style="font-size:30px; margin-right:59px;"> 타닌 + 철분</li> 
+
+
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- End #main -->
+
+    <div id="preloader"></div>
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Vendor JS Files -->
+    <script src="../static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="../static/assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="../static/assets/js/main.js"></script>
+  </body>
+</html>
