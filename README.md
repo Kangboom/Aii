@@ -5,7 +5,6 @@ AI 기술을 활용한 의약 정보 제공 웹 서비스
 - - -
 1. 프로젝트 소개
 2. 사용 방법
-  
 
 ## 프로젝트 소개
 - - -
@@ -23,8 +22,7 @@ AI 기술을 활용한 의약 정보 제공 웹 서비스
 #### 3. 의약품 앞면 사진과 뒷면 사진을 업로드 한다.
 <image src="https://github.com/Kangboom/Aii/assets/103165796/5d230659-6284-46a1-ad21-18ff582a6dce" width="500px" height="250px" />
 
-#### 4. 검색한 약에 대한 정보를 확인한다.
-<image src="https://github.com/Kangboom/Aii/assets/103165796/07d7da06-06d2-4a81-9b2e-7ad4aafbd042" width="500px" height="250px" /><br> 
-<image src="https://github.com/Kangboom/Aii/assets/103165796/0b7bd6e7-aa55-48c1-a9fb-388f6cb68580" width="400px" height="250px" />
+#### 4. 각 항목을 선택해 검색한 약에 대한 정보들을 확인한다.
+<image src="https://github.com/Kangboom/Aii/assets/103165796/07d7da06-06d2-4a81-9b2e-7ad4aafbd042" width="500px" height="250px" />
 
 
